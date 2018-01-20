@@ -1,7 +1,11 @@
 {
   "name": "local-weather",
   "version": "0.1.0",
-  "private": true,
+  "description": "A simple web application that shows what the current weather is based on the HTML5 Geolocation API, and the freeCodeCamp Weather API.",
+  "repository": {
+    "type": "git",
+    "url": "https//www.github.com/samueladekunle/local-weather"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "font-awesome": "^4.7.0",
@@ -16,5 +20,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "license": "MIT",
+  "keywords": [
+    "Geolocation",
+    "HTML5 Geolocation API",
+    "weather"
+  ]
 }
