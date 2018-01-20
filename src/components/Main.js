@@ -22,6 +22,7 @@ export default class Main extends Component {
     const location = this.props.location,
           temperature = this.props.temperature,
           unit = this.props.unit,
+          weather = this.props.weather,
           description = this.props.description,
           icon = this.props.icon,
           message = this.getTooltip();
@@ -30,8 +31,8 @@ export default class Main extends Component {
       <main>
         <p>{location}</p>
         <p><span>{temperature}</span> <span className="unit-converter" onClick={this.handleClick} title={message}><sup>o</sup>{unit}</span></p>
-        <p>{description}</p>
-        <p><img src={icon} alt={description}></img></p>
+        <p>{weather}</p>
+        <p><img src={icon} alt={weather} title={description} className="weather-icon"></img></p>
       </main>
     );
   }

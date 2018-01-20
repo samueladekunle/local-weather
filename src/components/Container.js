@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import axios from "axios";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
+import "../css/style.css";
 
 export default class Container extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { shouldRender: false, location: "", temperature: 0.0, unit: "", description: "", icon: "" };
+    this.state = { shouldRender: false, location: "", temperature: 0.0, unit: "", weather: "", description: "", icon: "" };
 
     this.convertTemperature = this.convertTemperature.bind(this);
   }
@@ -40,12 +42,13 @@ export default class Container extends Component {
   populateState(object) {
     const shouldRender = true;
     const location = `${object.name}, ${object.sys.country}`;
-    const temperature = object.main.temp;
+    const temperature = Math.round(object.main.temp);
     const unit = "C";
-    const description = object.weather[0].main;
+    const weather = object.weather[0].main;
+    const description = object.weather[0].description.replace(/\b\w/g, firstLetter => firstLetter.toUpperCase());
     const icon = object.weather[0].icon;
 
-    this.setState({ shouldRender, location, temperature, unit, description, icon });
+    this.setState({ shouldRender, location, temperature, unit, weather, description, icon });
   }
 
   convertTemperature() {
@@ -69,12 +72,16 @@ export default class Container extends Component {
 
   renderMain() {
     return (
+      <ReactCSSTransitionGroup transitionName="example"  transitionAppear={true} transitionAppearTimeout={500} transitionEnter={false} transitionLeave={false}>
       <Main location={this.state.location}
             temperature={this.state.temperature}
             unit={this.state.unit}
+            weather={this.state.weather}
             description={this.state.description}
             icon={this.state.icon}
-            onConvertTemperature={this.convertTemperature} />
+            onConvertTemperature={this.convertTemperature}
+            key={Date.now()} />
+      </ReactCSSTransitionGroup>
     );
   }
 

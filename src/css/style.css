@@ -1,41 +1,71 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,700');
 
 body {
-    background-color:darkslateblue;
-    color:azure;
+    background-color: darkslateblue;
+    color: azure;
+}
+
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.example-appear {
+    opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
 }
 
 .container {
-	width: 80%;
-	margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
-header h1, main p, footer address {
-	text-align: center;
+header h1,
+main p,
+footer address {
+    text-align: center;
 }
 
-header, main, footer {
-	margin: 10px;
+header,
+main,
+footer {
+    margin: 10px;
 }
 
 header h1 {
     font-family: 'Titillium Web', sans-serif;
-
     font-size: 40px;
     font-weight: bold;
 }
 
 header {
-	padding: 10px;
+    padding: 10px;
 }
 
 main {
-	padding: 20px;
+    padding: 20px;
 }
 
 main p {
-	font-size: 30px;
+    font-size: 30px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .unit-converter {
@@ -43,7 +73,7 @@ main p {
 }
 
 .unit-converter:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .unit-converter:active {
@@ -51,9 +81,9 @@ main p {
 }
 
 footer {
-	width: 75%;
-	position: absolute;
-	bottom: 0px;
+    width: 75%;
+    position: absolute;
+    bottom: 0px;
 }
 
 footer address {
@@ -64,24 +94,30 @@ footer .author {
     border-bottom-style: dotted;
     border-bottom-width: 1px;
     border-bottom-color: hotpink;
-    
     color: hotpink;
 }
 
 footer .fa-code {
-    color:hotpink;
+    color: hotpink;
 }
 
 footer .fa-heart {
-	color:hotpink;
+    color: hotpink;
 }
 
-footer .author:hover, footer .fa-heart:hover, footer .fa-code:hover {
+header .hail-icon,
+footer .author:hover,
+footer .fa-heart:hover,
+footer .fa-code:hover {
     cursor: pointer;
     color: aqua;
 }
 
+main .weather-icon:hover {
+    cursor: pointer;
+}
+
 footer .author:hover {
-	color: aqua;
-	border-bottom-color: aqua;
+    color: aqua;
+    border-bottom-color: aqua;
 }

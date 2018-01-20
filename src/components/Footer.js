@@ -7,11 +7,11 @@ export default class Footer extends Component {
     return (
       <footer>
         <address>
-        	<i className="fa fa-code"></i>
+        	<span title="Code"><i className="fa fa-code" title="Code"></i></span>
         	<span> with </span>
-        	<i className="fa fa-heart"></i>
+        	<span title="Love"><i className="fa fa-heart"></i></span>
         	<span> by </span>
-        	<span className="author">Samuel Adekunle</span>
+        	<span className="author" title="Samuel Adekunle">Samuel Adekunle</span>
         </address>
       </footer>
     );
